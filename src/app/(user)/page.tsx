@@ -8,7 +8,7 @@ export default function HomePage() {
   return (
     <div className="space-y-12">
       <div>
-        <h1 className="text-4xl font-headline mb-2 text-center text-primary">Welcome to Antartican Co. Eats!</h1>
+        <h1 className="text-4xl font-headline mb-2 text-center text-primary">Welcome to Antartican Co.!</h1>
         <p className="text-xl text-muted-foreground text-center mb-8">Explore our delicious offerings from the heart of Antarctica.</p>
       </div>
       

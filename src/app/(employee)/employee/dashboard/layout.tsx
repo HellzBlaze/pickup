@@ -44,7 +44,7 @@ const EmployeeDashboardSidebar = () => {
             </Link>
         </Button>
         <Button variant="destructive" className="w-full justify-start" onClick={() => {
-            try { sessionStorage.removeItem('antartican_co_eats_employee_authed'); } catch (e) {}
+            try { sessionStorage.removeItem('antartican_co_employee_authed'); } catch (e) {}
             window.location.href = '/employee/login'; // Force reload to clear state
         }}>
             <LogOut className="mr-2 h-4 w-4" /> Logout

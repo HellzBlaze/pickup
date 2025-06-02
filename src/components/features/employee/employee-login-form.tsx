@@ -10,7 +10,7 @@ import { Label } from '@/components/ui/label';
 import { KeyRound, LogIn } from 'lucide-react';
 
 const ACCESS_CODE = '2724';
-const EMPLOYEE_AUTH_KEY = 'antartican_co_eats_employee_authed';
+const EMPLOYEE_AUTH_KEY = 'antartican_co_employee_authed';
 
 export default function EmployeeLoginForm() {
   const [code, setCode] = useState('');

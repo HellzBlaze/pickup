@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Loader2 } from 'lucide-react';
 
-const EMPLOYEE_AUTH_KEY = 'antartican_co_eats_employee_authed';
+const EMPLOYEE_AUTH_KEY = 'antartican_co_employee_authed';
 
 export default function EmployeeAuthWrapper({ children }: { children: ReactNode }) {
   const router = useRouter();

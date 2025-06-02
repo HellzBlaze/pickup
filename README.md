@@ -1,6 +1,7 @@
-# Antartican Co. Eats - Next.js Application
+md
+# Antartican Co. - Next.js Application
 
-This project is a Next.js application for Antartican Co. Eats, a fictional food ordering platform. It's built with modern web technologies and designed to be easily extensible.
+This project is a Next.js application for Antartican Co., a fictional food ordering platform. It's built with modern web technologies and designed to be easily extensible.
 
 ## Getting Started
 
@@ -82,6 +83,17 @@ A brief overview of the key directories:
 *   `src/hooks/`: Custom React hooks.
 *   `src/lib/`: Utility functions.
 *   `public/`: Static assets.
+
+## `.gitignore`
+
+This project includes a `.gitignore` file tailored for Next.js projects. This file ensures that unnecessary build artifacts, local configuration files, and sensitive information are not committed to version control. Key ignored items include:
+
+*   `node_modules/`: Project dependencies.
+*   `.next/`: Next.js build output.
+*   `.env.local`: Local environment variables (potentially sensitive).
+*   Log files, editor-specific files, and OS-specific files.
+
+Review the `.gitignore` file for a complete list.
 
 ## Contributing
 

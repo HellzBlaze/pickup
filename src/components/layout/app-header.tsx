@@ -16,7 +16,7 @@ export default function AppHeader() {
     <header className="bg-card border-b border-border shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <Link href="/" className="text-2xl font-headline text-primary hover:opacity-80 transition-opacity">
-          Antartican Co. Eats
+          Antartican Co.
         </Link>
         <nav className="flex items-center gap-4">
           <Sheet>

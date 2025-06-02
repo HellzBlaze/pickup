@@ -5,7 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import AppProviders from '@/components/providers/app-providers';
 
 export const metadata: Metadata = {
-  title: 'Antartican Co. Eats',
+  title: 'Antartican Co.',
   description: 'Order delicious food from Antartican Co.',
 };
 

@@ -5,68 +5,67 @@
 
 @layer base {
   :root {
-    --background: 0 0% 94%; /* Light gray #F0F0F0 */
-    --foreground: 240 10% 3.9%; /* Default dark gray for text */
+    --background: 0 0% 7%; /* Dark grey, near black #121212 */
+    --foreground: 0 0% 88%; /* Light grey/white for text #e0e0e0 */
 
-    --muted: 240 5% 90%; /* Lighter gray for muted text/elements */
-    --muted-foreground: 240 5% 35%; /* Darker gray for muted foreground */
+    --muted: 0 0% 17%; /* Darker grey for muted elements #2c2c2c */
+    --muted-foreground: 0 0% 46%; /* Mid grey for muted text #757575 */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --popover: 0 0% 10%; /* Slightly lighter dark grey for popovers #1a1a1a */
+    --popover-foreground: 0 0% 88%; /* Light text for popovers */
 
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card: 0 0% 12%; /* Dark grey for cards #1e1e1e */
+    --card-foreground: 0 0% 88%; /* Light text for cards */
 
-    --border: 0 0% 85%; /* Slightly darker gray for borders */
-    --input: 0 0% 85%; /* Similar for inputs */
+    --border: 0 0% 20%; /* Subtle border color #333333 */
+    --input: 0 0% 20%; /* Input background to match border */
 
-    --primary: 197 75% 52%; /* Vibrant blue #29ABE2 */
-    --primary-foreground: 0 0% 100%; /* White */
+    --primary: 14 100% 57%; /* Vibrant orange #ff5722 */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
 
-    --secondary: 122 39% 50%; /* Complementary green #4CAF50 */
-    --secondary-foreground: 0 0% 100%; /* White */
+    --secondary: 24 100% 60%; /* A slightly different orange #ff8c00 */
+    --secondary-foreground: 0 0% 0%; /* Black text on secondary for contrast */
 
-    --accent: 36 100% 50%; /* Contrasting orange #FF9500 */
-    --accent-foreground: 0 0% 100%; /* White */
+    --accent: 14 100% 57%; /* Same as primary for general accent #ff5722 */
+    --accent-foreground: 0 0% 100%; /* White text on accent */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%; /* Standard red for destructive actions */
+    --destructive-foreground: 0 0% 98%; /* Light text on destructive */
 
-    --ring: 197 75% 52%; /* Primary color for rings */
+    --ring: 14 100% 57%; /* Primary color for rings/focus outlines */
 
     --radius: 0.5rem;
   }
 
   .dark {
-    /* Keeping dark mode similar to light mode as per prompt focus, adjust if needed */
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 94%;
+    --background: 0 0% 7%; /* Dark grey, near black #121212 */
+    --foreground: 0 0% 88%; /* Light grey/white for text #e0e0e0 */
 
-    --muted: 240 4% 15%;
-    --muted-foreground: 240 5% 65%;
+    --muted: 0 0% 17%; /* Darker grey for muted elements #2c2c2c */
+    --muted-foreground: 0 0% 46%; /* Mid grey for muted text #757575 */
 
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 94%;
+    --popover: 0 0% 10%; /* Slightly lighter dark grey for popovers #1a1a1a */
+    --popover-foreground: 0 0% 88%; /* Light text for popovers */
 
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 94%;
+    --card: 0 0% 12%; /* Dark grey for cards #1e1e1e */
+    --card-foreground: 0 0% 88%; /* Light text for cards */
 
-    --border: 240 4% 15%;
-    --input: 240 4% 15%;
+    --border: 0 0% 20%; /* Subtle border color #333333 */
+    --input: 0 0% 20%; /* Input background to match border */
 
-    --primary: 197 75% 52%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 14 100% 57%; /* Vibrant orange #ff5722 */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
 
-    --secondary: 122 39% 50%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 24 100% 60%; /* A slightly different orange #ff8c00 */
+    --secondary-foreground: 0 0% 0%; /* Black text on secondary for contrast */
 
-    --accent: 36 100% 50%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 14 100% 57%; /* Same as primary for general accent #ff5722 */
+    --accent-foreground: 0 0% 100%; /* White text on accent */
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 70% 50%; /* A slightly darker red for dark mode, e.g. #D32F2F */
+    --destructive-foreground: 0 0% 98%; /* Light text on destructive */
 
-    --ring: 197 75% 52%;
+    --ring: 14 100% 57%; /* Primary color for rings/focus outlines */
   }
 }
 

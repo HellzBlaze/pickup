@@ -8,8 +8,8 @@ const pizzaCustomizations: Customization[] = [
     type: 'single',
     options: [
       { id: 'small', name: 'Small (10")', priceAdjustment: 0 },
-      { id: 'medium', name: 'Medium (12")', priceAdjustment: 3 },
-      { id: 'large', name: 'Large (14")', priceAdjustment: 6 },
+      { id: 'medium', name: 'Medium (12")', priceAdjustment: 150 }, // Approx 3 USD to INR
+      { id: 'large', name: 'Large (14")', priceAdjustment: 300 }, // Approx 6 USD to INR
     ],
     defaultOption: 'small',
   },
@@ -20,7 +20,7 @@ const pizzaCustomizations: Customization[] = [
     options: [
       { id: 'classic', name: 'Classic Hand-Tossed', priceAdjustment: 0 },
       { id: 'thin', name: 'Thin Crust', priceAdjustment: 0 },
-      { id: 'stuffed', name: 'Cheese-Stuffed Crust', priceAdjustment: 2.5 },
+      { id: 'stuffed', name: 'Cheese-Stuffed Crust', priceAdjustment: 125 }, // Approx 2.5 USD to INR
     ],
     defaultOption: 'classic',
   },
@@ -29,10 +29,10 @@ const pizzaCustomizations: Customization[] = [
     name: 'Extra Toppings',
     type: 'multiple',
     options: [
-      { id: 'pepperoni', name: 'Pepperoni', priceAdjustment: 1.5 },
-      { id: 'mushrooms', name: 'Mushrooms', priceAdjustment: 1 },
-      { id: 'olives', name: 'Olives', priceAdjustment: 1 },
-      { id: 'extra_cheese', name: 'Extra Cheese', priceAdjustment: 2 },
+      { id: 'pepperoni', name: 'Pepperoni', priceAdjustment: 75 }, // Approx 1.5 USD to INR
+      { id: 'mushrooms', name: 'Mushrooms', priceAdjustment: 50 }, // Approx 1 USD to INR
+      { id: 'olives', name: 'Olives', priceAdjustment: 50 }, // Approx 1 USD to INR
+      { id: 'extra_cheese', name: 'Extra Cheese', priceAdjustment: 100 }, // Approx 2 USD to INR
     ],
   },
 ];
@@ -55,9 +55,9 @@ const burgerCustomizations: Customization[] = [
     name: 'Add-ons',
     type: 'multiple',
     options: [
-      { id: 'bacon', name: 'Crispy Bacon', priceAdjustment: 2 },
-      { id: 'extra_patty', name: 'Extra Patty', priceAdjustment: 3 },
-      { id: 'avocado', name: 'Avocado Slices', priceAdjustment: 1.5 },
+      { id: 'bacon', name: 'Crispy Bacon', priceAdjustment: 100 }, // Approx 2 USD to INR
+      { id: 'extra_patty', name: 'Extra Patty', priceAdjustment: 150 }, // Approx 3 USD to INR
+      { id: 'avocado', name: 'Avocado Slices', priceAdjustment: 75 }, // Approx 1.5 USD to INR
     ],
   },
 ];
@@ -80,9 +80,9 @@ const saladCustomizations: Customization[] = [
     type: 'single',
     options: [
         { id: 'none', name: 'None', priceAdjustment: 0 },
-        { id: 'chicken', name: 'Grilled Chicken', priceAdjustment: 3 },
-        { id: 'salmon', name: 'Grilled Salmon', priceAdjustment: 5 },
-        { id: 'tofu', name: 'Marinated Tofu', priceAdjustment: 2.5 },
+        { id: 'chicken', name: 'Grilled Chicken', priceAdjustment: 150 }, // Approx 3 USD to INR
+        { id: 'salmon', name: 'Grilled Salmon', priceAdjustment: 250 }, // Approx 5 USD to INR
+        { id: 'tofu', name: 'Marinated Tofu', priceAdjustment: 125 }, // Approx 2.5 USD to INR
     ],
     defaultOption: 'none',
   }
@@ -98,7 +98,7 @@ export const menuData: CategoryType[] = [
         id: 'penguin_pepperoni',
         name: 'Penguin Pepperoni Blast',
         description: 'Classic pepperoni pizza with a zesty tomato sauce and mozzarella cheese, baked to perfection.',
-        price: 12.99,
+        price: 975.00, // Approx 12.99 USD
         imageUrl: 'https://placehold.co/600x400.png',
         dataAiHint: 'pepperoni pizza',
         category: 'Pizzas from the Permafrost',
@@ -108,7 +108,7 @@ export const menuData: CategoryType[] = [
         id: 'glacial_veggie',
         name: 'Glacial Veggie Delight',
         description: 'A delightful mix of fresh bell peppers, onions, olives, mushrooms, and spinach on a creamy garlic base.',
-        price: 11.99,
+        price: 900.00, // Approx 11.99 USD
         imageUrl: 'https://placehold.co/600x400.png',
         dataAiHint: 'vegetarian pizza',
         category: 'Pizzas from the Permafrost',
@@ -124,7 +124,7 @@ export const menuData: CategoryType[] = [
         id: 'antarctic_classic',
         name: 'The Antarctic Classic Burger',
         description: 'Juicy beef patty with lettuce, tomato, onion, pickles, and our signature polar sauce on a toasted brioche bun.',
-        price: 9.50,
+        price: 715.00, // Approx 9.50 USD
         imageUrl: 'https://placehold.co/600x400.png',
         dataAiHint: 'classic burger',
         category: 'Blizzard Burgers',
@@ -134,7 +134,7 @@ export const menuData: CategoryType[] = [
         id: 'iceberg_chicken',
         name: 'Iceberg Crispy Chicken Sandwich',
         description: 'Crispy fried chicken breast, spicy mayo, lettuce, and pickles on a soft potato roll.',
-        price: 10.25,
+        price: 770.00, // Approx 10.25 USD
         imageUrl: 'https://placehold.co/600x400.png',
         dataAiHint: 'chicken sandwich',
         category: 'Blizzard Burgers',
@@ -149,7 +149,7 @@ export const menuData: CategoryType[] = [
         id: 'arctic_garden',
         name: 'Arctic Garden Salad',
         description: 'A refreshing mix of mixed greens, cherry tomatoes, cucumbers, carrots, and croutons.',
-        price: 7.99,
+        price: 600.00, // Approx 7.99 USD
         imageUrl: 'https://placehold.co/600x400.png',
         dataAiHint: 'garden salad',
         category: 'Subzero Salads',
@@ -165,7 +165,7 @@ export const menuData: CategoryType[] = [
         id: 'polar_punch',
         name: 'Polar Punch',
         description: 'A fruity and refreshing punch, perfect for a warm day (or a cold one!).',
-        price: 3.50,
+        price: 260.00, // Approx 3.50 USD
         imageUrl: 'https://placehold.co/300x300.png',
         dataAiHint: 'fruit punch',
         category: 'Frosty Beverages',
@@ -174,7 +174,7 @@ export const menuData: CategoryType[] = [
         id: 'glacial_water',
         name: 'Glacial Spring Water',
         description: 'Pure, crisp Antarctic spring water.',
-        price: 2.00,
+        price: 150.00, // Approx 2.00 USD
         imageUrl: 'https://placehold.co/300x300.png',
         dataAiHint: 'water bottle',
         category: 'Frosty Beverages',

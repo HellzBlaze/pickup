@@ -45,7 +45,7 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
           <CardDescription className="text-sm text-muted-foreground mb-2 h-16 overflow-y-auto">
             {item.description}
           </CardDescription>
-          <p className="text-lg font-semibold text-secondary">${item.price.toFixed(2)}</p>
+          <p className="text-lg font-semibold text-secondary">₹{item.price.toFixed(2)}</p>
         </CardContent>
         <CardFooter className="p-4 border-t">
           <Button onClick={handleAddToCart} className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">

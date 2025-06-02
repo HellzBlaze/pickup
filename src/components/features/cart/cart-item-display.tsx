@@ -55,7 +55,7 @@ export default function CartItemDisplay({ item }: CartItemDisplayProps) {
             })}
           </div>
         )}
-        <p className="text-sm text-secondary font-medium mt-1">${itemSubtotal.toFixed(2)}</p>
+        <p className="text-sm text-secondary font-medium mt-1">₹{itemSubtotal.toFixed(2)}</p>
       </div>
       <div className="flex flex-col items-end justify-between shrink-0">
         <Button variant="ghost" size="icon" onClick={() => removeFromCart(item.id, customizationSignature)} className="text-destructive hover:text-destructive/80 h-7 w-7">

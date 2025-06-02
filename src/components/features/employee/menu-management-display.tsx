@@ -126,7 +126,7 @@ export default function MenuManagementDisplay({ initialMenuData }: MenuManagemen
               <TableRow key={item.id}>
                 <TableCell className="font-medium">{item.name}</TableCell>
                 <TableCell>{item.categoryName}</TableCell>
-                <TableCell>${item.price.toFixed(2)}</TableCell>
+                <TableCell>₹{item.price.toFixed(2)}</TableCell>
                 <TableCell className="text-right space-x-1 sm:space-x-2">
                   <Button variant="outline" size="sm" onClick={() => handleEdit(item)}>
                     <Edit2 className="h-3 w-3 sm:h-4 sm:w-4" /> <span className="sr-only sm:not-sr-only sm:ml-1">Edit</span>
@@ -180,7 +180,7 @@ export default function MenuManagementDisplay({ initialMenuData }: MenuManagemen
               <Textarea id="description" value={currentItemData.description || ''} onChange={e => setCurrentItemData(p => ({...p, description: e.target.value}))} />
             </div>
             <div className="space-y-1">
-              <Label htmlFor="price">Price</Label>
+              <Label htmlFor="price">Price (₹)</Label>
               <Input id="price" type="number" value={currentItemData.price || 0} onChange={e => setCurrentItemData(p => ({...p, price: parseFloat(e.target.value) || 0}))} />
             </div>
           </div>

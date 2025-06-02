@@ -57,7 +57,7 @@ export default function TipSelector({ subtotal, onTipChange }: TipSelectorProps)
                             ? 'bg-primary text-primary-foreground border-primary ring-2 ring-primary ring-offset-2' 
                             : 'bg-card hover:bg-muted'}`}
             >
-              {p.label} (${(subtotal * p.value).toFixed(2)})
+              {p.label} (₹{(subtotal * p.value).toFixed(2)})
             </Label>
           </div>
         ))}
@@ -77,7 +77,7 @@ export default function TipSelector({ subtotal, onTipChange }: TipSelectorProps)
 
       {selectedTipType === 'custom' && (
         <div className="flex items-center space-x-2">
-          <span className="text-lg font-medium">$</span>
+          <span className="text-lg font-medium">₹</span>
           <Input
             type="number"
             aria-label="Custom tip amount"

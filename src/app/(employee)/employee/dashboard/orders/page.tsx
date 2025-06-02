@@ -3,9 +3,9 @@ import OrderViewList from '@/components/features/employee/order-view-list';
 
 // Mock data for orders - in a real app, this would be fetched
 const mockOrders = [
-  { id: 'ORD001', customerName: 'Captain Frosty', total: 35.99, items: 3, status: 'Preparing' as const, date: new Date(Date.now() - 3600000).toISOString() },
-  { id: 'ORD002', customerName: 'Penguin Pete', total: 12.50, items: 1, status: 'Out for Delivery' as const, date: new Date(Date.now() - 7200000).toISOString() },
-  { id: 'ORD003', customerName: 'Aurora Borealis', total: 22.75, items: 2, status: 'Delivered' as const, date: new Date(Date.now() - 86400000).toISOString() },
+  { id: 'ORD001', customerName: 'Captain Frosty', total: 2800.00, items: 3, status: 'Preparing' as const, date: new Date(Date.now() - 3600000).toISOString() },
+  { id: 'ORD002', customerName: 'Penguin Pete', total: 950.50, items: 1, status: 'Out for Delivery' as const, date: new Date(Date.now() - 7200000).toISOString() },
+  { id: 'ORD003', customerName: 'Aurora Borealis', total: 1750.75, items: 2, status: 'Delivered' as const, date: new Date(Date.now() - 86400000).toISOString() },
 ];
 
 

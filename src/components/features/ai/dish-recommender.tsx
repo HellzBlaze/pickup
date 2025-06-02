@@ -140,7 +140,7 @@ export default function DishRecommender({ orderHistory }: DishRecommenderProps) 
                 </CardContent>
                 <CardFooter>
                   <Button onClick={() => addToCart(item, 1)} size="sm" className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground">
-                    <ShoppingCart className="mr-2 h-4 w-4" /> Add to Cart (${item.price.toFixed(2)})
+                    <ShoppingCart className="mr-2 h-4 w-4" /> Add to Cart (₹{item.price.toFixed(2)})
                   </Button>
                 </CardFooter>
               </Card>

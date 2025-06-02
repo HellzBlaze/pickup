@@ -43,7 +43,7 @@ export default function CartSheet() {
             <div className="w-full space-y-4">
               <div className="flex justify-between items-center text-lg font-semibold">
                 <span>Subtotal:</span>
-                <span className="text-secondary">${total.toFixed(2)}</span>
+                <span className="text-secondary">₹{total.toFixed(2)}</span>
               </div>
               <Separator />
               <div className="flex gap-2">

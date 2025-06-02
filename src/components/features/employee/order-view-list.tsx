@@ -68,7 +68,7 @@ export default function OrderViewList({ orders }: OrderViewListProps) {
                         <TableCell className="whitespace-nowrap">{order.customerName}</TableCell>
                         <TableCell className="whitespace-nowrap">{format(parseISO(order.date), 'PPp')}</TableCell>
                         <TableCell className="text-center">{order.items}</TableCell>
-                        <TableCell className="text-right">${order.total.toFixed(2)}</TableCell>
+                        <TableCell className="text-right">₹{order.total.toFixed(2)}</TableCell>
                         <TableCell className="whitespace-nowrap">
                             <Badge variant={badgeVariant} className="capitalize text-xs">
                                 <Icon className={`mr-1.5 h-3.5 w-3.5 ${colorClasses}`} />

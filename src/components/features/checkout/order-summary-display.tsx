@@ -47,17 +47,17 @@ export default function OrderSummaryDisplay({
                   </div>
                 )}
               </div>
-              <p className="font-medium">${item.finalPrice.toFixed(2)}</p>
+              <p className="font-medium">₹{item.finalPrice.toFixed(2)}</p>
             </div>
           ))}
         </div>
       </ScrollArea>
       <Separator className="my-3"/>
       <div className="space-y-1 text-sm">
-        <div className="flex justify-between"><span>Subtotal:</span><span>${subtotal.toFixed(2)}</span></div>
-        <div className="flex justify-between"><span>Delivery Fee:</span><span>${deliveryFee.toFixed(2)}</span></div>
-        <div className="flex justify-between"><span>Taxes (Est.):</span><span>${taxes.toFixed(2)}</span></div>
-        {tipAmount > 0 && <div className="flex justify-between"><span>Tip:</span><span>${tipAmount.toFixed(2)}</span></div>}
+        <div className="flex justify-between"><span>Subtotal:</span><span>₹{subtotal.toFixed(2)}</span></div>
+        <div className="flex justify-between"><span>Delivery Fee:</span><span>₹{deliveryFee.toFixed(2)}</span></div>
+        <div className="flex justify-between"><span>Taxes (Est.):</span><span>₹{taxes.toFixed(2)}</span></div>
+        {tipAmount > 0 && <div className="flex justify-between"><span>Tip:</span><span>₹{tipAmount.toFixed(2)}</span></div>}
       </div>
     </div>
   );

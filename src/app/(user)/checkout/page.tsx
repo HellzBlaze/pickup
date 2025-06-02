@@ -14,7 +14,7 @@ import type { DeliveryInfo } from '@/types';
 import { Separator } from '@/components/ui/separator';
 import { Send } from 'lucide-react';
 
-const DELIVERY_FEE = 5.00; // Example delivery fee
+const DELIVERY_FEE = 100.00; // Example delivery fee in INR
 const TAX_RATE = 0.08; // Example tax rate (8%)
 
 export default function CheckoutPage() {
@@ -63,7 +63,7 @@ export default function CheckoutPage() {
 
     toast({
       title: "Order Placed Successfully!",
-      description: `Your Antarctic feast is on its way! Total: $${totalAmount.toFixed(2)}`,
+      description: `Your Antarctic feast is on its way! Total: ₹${totalAmount.toFixed(2)}`,
       duration: 5000,
     });
     clearCart();
@@ -124,7 +124,7 @@ export default function CheckoutPage() {
 
       <div className="text-center mt-8">
         <p className="text-3xl font-bold mb-4">
-          Grand Total: <span className="text-accent">${totalAmount.toFixed(2)}</span>
+          Grand Total: <span className="text-accent">₹{totalAmount.toFixed(2)}</span>
         </p>
         <Button 
           size="lg" 

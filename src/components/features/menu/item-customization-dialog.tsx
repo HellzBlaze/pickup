@@ -91,7 +91,7 @@ export default function ItemCustomizationDialog({ isOpen, setIsOpen, item }: Ite
         <DialogHeader>
           <DialogTitle className="font-headline text-2xl text-primary">Customize {item.name}</DialogTitle>
           <DialogDescription>
-            Make it just the way you like it! Base price: ${item.price.toFixed(2)}
+            Make it just the way you like it! Base price: ₹{item.price.toFixed(2)}
           </DialogDescription>
         </DialogHeader>
         <ScrollArea className="flex-grow pr-6 -mr-6"> {/* Added pr-6 and -mr-6 for scrollbar spacing */}
@@ -114,7 +114,7 @@ export default function ItemCustomizationDialog({ isOpen, setIsOpen, item }: Ite
                           {opt.name} 
                           {opt.priceAdjustment !== 0 && 
                             <span className="text-muted-foreground text-sm ml-1">
-                              ({opt.priceAdjustment > 0 ? '+' : ''}${opt.priceAdjustment.toFixed(2)})
+                              ({opt.priceAdjustment > 0 ? '+' : ''}₹{opt.priceAdjustment.toFixed(2)})
                             </span>
                           }
                         </Label>
@@ -134,7 +134,7 @@ export default function ItemCustomizationDialog({ isOpen, setIsOpen, item }: Ite
                           {opt.name} 
                           {opt.priceAdjustment !== 0 && 
                             <span className="text-muted-foreground text-sm ml-1">
-                              ({opt.priceAdjustment > 0 ? '+' : ''}${opt.priceAdjustment.toFixed(2)})
+                              ({opt.priceAdjustment > 0 ? '+' : ''}₹{opt.priceAdjustment.toFixed(2)})
                             </span>
                           }
                         </Label>
@@ -148,7 +148,7 @@ export default function ItemCustomizationDialog({ isOpen, setIsOpen, item }: Ite
         </ScrollArea>
         <DialogFooter className="mt-auto pt-4 border-t">
           <div className="flex justify-between items-center w-full">
-            <p className="text-xl font-semibold">Total: ${currentPrice.toFixed(2)}</p>
+            <p className="text-xl font-semibold">Total: ₹{currentPrice.toFixed(2)}</p>
             <Button onClick={handleAddToCartWithCustomizations} className="bg-accent hover:bg-accent/90 text-accent-foreground">
               Add to Cart
             </Button>

@@ -7,7 +7,7 @@ export default function AppFooter() {
           &copy; {new Date().getFullYear()} Antartican Co. Eats. All rights reserved.
         </p>
         <p className="text-xs text-muted-foreground mt-1">
-          Fresh from the South Pole, to your door!
+          Original idea
         </p>
       </div>
     </footer>

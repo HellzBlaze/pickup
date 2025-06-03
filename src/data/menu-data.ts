@@ -150,7 +150,7 @@ export const menuData: CategoryType[] = [
         name: 'Arctic Garden Salad',
         description: 'A refreshing mix of mixed greens, cherry tomatoes, cucumbers, carrots, and croutons.',
         price: 600.00,
-        imageUrl: 'https://placehold.co/600x400.png',
+        imageUrl: '/pic5.png',
         dataAiHint: 'garden salad',
         category: 'Subzero Salads',
         customizations: saladCustomizations,

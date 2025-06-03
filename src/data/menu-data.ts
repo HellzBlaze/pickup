@@ -135,7 +135,7 @@ export const menuData: CategoryType[] = [
         name: 'Iceberg Crispy Chicken Sandwich',
         description: 'Crispy fried chicken breast, spicy mayo, lettuce, and pickles on a soft potato roll.',
         price: 770.00,
-        imageUrl: 'https://placehold.co/600x400.png',
+        imageUrl: '/pic4.png',
         dataAiHint: 'chicken sandwich',
         category: 'Blizzard Burgers',
       },

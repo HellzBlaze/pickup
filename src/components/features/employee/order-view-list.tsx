@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { format, parseISO } from 'date-fns';
-import { PackageCheck, PackageSearch, CheckCircle2, XCircle, type LucideIcon, Ban, Hourglass, BellRing, Clock, BadgeCheck, CircleSlash, AlertTriangle } from 'lucide-react';
+import { PackageCheck, PackageSearch, CheckCircle2, XCircle, type LucideIcon, Ban, Hourglass, BellRing, Clock, BadgeCheck, CircleSlash, AlertTriangle, CreditCard } from 'lucide-react';
 
 interface OrderViewListProps {
   orders: Order[];
@@ -18,7 +18,7 @@ interface OrderViewListProps {
 }
 
 const orderStatusOptions: OrderStatus[] = ['Waiting', 'Preparing', 'Prepared', 'Served'];
-const paymentStatusOptions: PaymentStatus[] = ['Pending', 'Paid', 'Failed', 'Refunded'];
+const paymentStatusOptions: PaymentStatus[] = ['Pending', 'Paid (Cash)', 'Paid (Online)', 'Refunded'];
 
 const orderStatusConfig: Record<OrderStatus, { Icon: LucideIcon, colorClasses: string, badgeVariant: "default" | "secondary" | "destructive" | "outline" }> = {
     'Waiting': { Icon: Hourglass, colorClasses: 'text-orange-500 dark:text-orange-400', badgeVariant: 'outline' },
@@ -30,8 +30,8 @@ const orderStatusConfig: Record<OrderStatus, { Icon: LucideIcon, colorClasses: s
 
 const paymentStatusConfig: Record<PaymentStatus, { Icon: LucideIcon, colorClasses: string, badgeVariant: "default" | "secondary" | "destructive" | "outline" }> = {
     'Pending': { Icon: Clock, colorClasses: 'text-yellow-600 dark:text-yellow-500', badgeVariant: 'outline' },
-    'Paid': { Icon: BadgeCheck, colorClasses: 'text-green-600 dark:text-green-500', badgeVariant: 'secondary' },
-    'Failed': { Icon: AlertTriangle, colorClasses: 'text-red-600 dark:text-red-500', badgeVariant: 'destructive'},
+    'Paid (Cash)': { Icon: BadgeCheck, colorClasses: 'text-green-600 dark:text-green-500', badgeVariant: 'secondary' },
+    'Paid (Online)': { Icon: CreditCard, colorClasses: 'text-green-600 dark:text-green-500', badgeVariant: 'secondary' }, // Changed from Failed
     'Refunded': { Icon: CircleSlash, colorClasses: 'text-purple-600 dark:text-purple-500', badgeVariant: 'default'}
 };
 
@@ -74,7 +74,8 @@ export default function OrderViewList({ orders, onUpdateStatus, onUpdatePaymentS
                 <TableBody>
                 {orders.map((order) => {
                     const { Icon: OrderIcon, colorClasses: orderColorClasses, badgeVariant: orderBadgeVariant } = orderStatusConfig[order.status];
-                    const { Icon: PaymentIcon, colorClasses: paymentColorClasses, badgeVariant: paymentBadgeVariant } = paymentStatusConfig[order.paymentStatus];
+                    const paymentConfigEntry = paymentStatusConfig[order.paymentStatus] || paymentStatusConfig['Pending']; // Fallback for safety
+                    const { Icon: PaymentIcon, colorClasses: paymentColorClasses, badgeVariant: paymentBadgeVariant } = paymentConfigEntry;
                     const isOrderActionDisabled = order.status === 'Served' || order.status === 'Cancelled';
                     const isPaymentActionDisabled = order.status === 'Cancelled' || order.paymentStatus === 'Refunded';
 
@@ -119,7 +120,7 @@ export default function OrderViewList({ orders, onUpdateStatus, onUpdatePaymentS
                                 onValueChange={(newStatus) => onUpdatePaymentStatus(order.id, newStatus as PaymentStatus)}
                                 disabled={isPaymentActionDisabled}
                             >
-                                <SelectTrigger className="h-8 w-[110px] text-xs inline-flex" disabled={isPaymentActionDisabled}>
+                                <SelectTrigger className="h-8 w-[120px] text-xs inline-flex" disabled={isPaymentActionDisabled}> {/* Adjusted width */}
                                     <SelectValue placeholder="Payment" />
                                 </SelectTrigger>
                                 <SelectContent>
@@ -154,4 +155,3 @@ export default function OrderViewList({ orders, onUpdateStatus, onUpdatePaymentS
     </Card>
   );
 }
-

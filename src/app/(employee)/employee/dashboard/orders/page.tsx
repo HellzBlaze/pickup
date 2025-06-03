@@ -19,13 +19,13 @@ import {
 } from "@/components/ui/alert-dialog"
 
 const initialMockOrders: Order[] = [
-  { id: 'ORD001', customerName: 'Alice Wonderland', total: 1235.00, items: 2, status: 'Waiting', paymentStatus: 'Paid', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
+  { id: 'ORD001', customerName: 'Alice Wonderland', total: 1235.00, items: 2, status: 'Waiting', paymentStatus: 'Paid (Cash)', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
   { id: 'ORD002', customerName: 'Bob The Builder', total: 850.50, items: 1, status: 'Preparing', paymentStatus: 'Pending', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
-  { id: 'ORD003', customerName: 'Charlie Brown', total: 2100.75, items: 3, status: 'Prepared', paymentStatus: 'Paid', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
-  { id: 'ORD004', customerName: 'Diana Prince', total: 550.00, items: 1, status: 'Served', paymentStatus: 'Paid', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
+  { id: 'ORD003', customerName: 'Charlie Brown', total: 2100.75, items: 3, status: 'Prepared', paymentStatus: 'Paid (Cash)', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
+  { id: 'ORD004', customerName: 'Diana Prince', total: 550.00, items: 1, status: 'Served', paymentStatus: 'Paid (Cash)', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
   { id: 'ORD005', customerName: 'Edward Scissorhands', total: 1675.20, items: 4, status: 'Cancelled', paymentStatus: 'Refunded', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
   { id: 'ORD006', customerName: 'Fiona Gallagher', total: 780.00, items: 1, status: 'Waiting', paymentStatus: 'Pending', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
-  { id: 'ORD007', customerName: 'Harry Potter', total: 1990.00, items: 2, status: 'Preparing', paymentStatus: 'Failed', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
+  { id: 'ORD007', customerName: 'Harry Potter', total: 1990.00, items: 2, status: 'Preparing', paymentStatus: 'Paid (Online)', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
 ];
 
 
@@ -51,7 +51,7 @@ export default function EmployeeOrdersPage() {
   const handleCancelOrder = (orderId: string) => {
     setOrders(prevOrders =>
       prevOrders.map(order =>
-        order.id === orderId ? { ...order, status: 'Cancelled', paymentStatus: order.paymentStatus === 'Paid' ? 'Refunded' : order.paymentStatus } : order
+        order.id === orderId ? { ...order, status: 'Cancelled', paymentStatus: (order.paymentStatus === 'Paid (Cash)' || order.paymentStatus === 'Paid (Online)') ? 'Refunded' : order.paymentStatus } : order
       )
     );
   };
@@ -101,4 +101,3 @@ export default function EmployeeOrdersPage() {
     </div>
   );
 }
-

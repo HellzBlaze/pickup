@@ -5,7 +5,7 @@ import type { ReactNode }from 'react';
 import EmployeeAuthWrapper from '@/components/features/employee/employee-auth-wrapper';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { LogOut, Utensils, ShoppingBag, Home } from 'lucide-react';
+import { LogOut, Utensils, ShoppingBag, Home, History } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 
@@ -15,6 +15,7 @@ const EmployeeDashboardSidebar = () => {
   const navItems = [
     { href: "/employee/dashboard", label: "Menu Management", icon: Utensils },
     { href: "/employee/dashboard/orders", label: "View Orders", icon: ShoppingBag },
+    { href: "/employee/dashboard/history", label: "Order History", icon: History },
   ];
 
   return (

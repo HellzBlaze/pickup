@@ -66,3 +66,8 @@ export interface Order {
   paymentStatus: PaymentStatus;
   date: string; // ISO date string
 }
+
+export interface HistoricalDayOrders {
+  date: string; // YYYY-MM-DD format for the day of archival
+  orders: Order[];
+}

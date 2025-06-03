@@ -1,32 +1,31 @@
 
 "use client";
 
+import type { Order, OrderStatus } from "@/types";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { format, parseISO } from 'date-fns';
-import { PackageCheck, PackageSearch, Truck, CheckCircle2, type LucideIcon } from 'lucide-react';
-
-interface Order {
-  id: string;
-  customerName: string;
-  total: number;
-  items: number;
-  status: 'Preparing' | 'Out for Delivery' | 'Delivered';
-  date: string;
-}
+import { PackageCheck, PackageSearch, Truck, CheckCircle2, XCircle, type LucideIcon, Ban } from 'lucide-react';
 
 interface OrderViewListProps {
   orders: Order[];
+  onUpdateStatus: (orderId: string, newStatus: OrderStatus) => void;
+  onCancelOrder: (orderId: string) => void;
 }
 
-const statusConfig: Record<Order['status'], { Icon: LucideIcon, colorClasses: string, badgeVariant: "default" | "secondary" | "destructive" | "outline" }> = {
+const statusOptions: OrderStatus[] = ['Preparing', 'Out for Delivery', 'Delivered'];
+
+const statusConfig: Record<OrderStatus, { Icon: LucideIcon, colorClasses: string, badgeVariant: "default" | "secondary" | "destructive" | "outline" }> = {
     'Preparing': { Icon: PackageSearch, colorClasses: 'text-yellow-500 dark:text-yellow-400', badgeVariant: 'outline' },
     'Out for Delivery': { Icon: Truck, colorClasses: 'text-blue-500 dark:text-blue-400', badgeVariant: 'default'},
-    'Delivered': { Icon: PackageCheck, colorClasses: 'text-green-500 dark:text-green-400', badgeVariant: 'secondary' }
+    'Delivered': { Icon: PackageCheck, colorClasses: 'text-green-500 dark:text-green-400', badgeVariant: 'secondary' },
+    'Cancelled': { Icon: Ban, colorClasses: 'text-red-600 dark:text-red-500', badgeVariant: 'destructive'}
 };
 
-export default function OrderViewList({ orders }: OrderViewListProps) {
+export default function OrderViewList({ orders, onUpdateStatus, onCancelOrder }: OrderViewListProps) {
   if (!orders || orders.length === 0) {
     return (
       <Card className="text-center py-12 shadow-md">
@@ -45,7 +44,7 @@ export default function OrderViewList({ orders }: OrderViewListProps) {
     <Card className="shadow-md">
         <CardHeader>
             <CardTitle className="text-xl md:text-2xl font-semibold text-secondary">Recent Orders</CardTitle>
-            <CardDescription>Overview of customer orders and their current status.</CardDescription>
+            <CardDescription>Overview of customer orders and their current status. Changes are mock and not persisted.</CardDescription>
         </CardHeader>
         <CardContent className="overflow-x-auto">
             <Table>
@@ -57,11 +56,13 @@ export default function OrderViewList({ orders }: OrderViewListProps) {
                     <TableHead className="text-center">Items</TableHead>
                     <TableHead className="text-right">Total</TableHead>
                     <TableHead>Status</TableHead>
+                    <TableHead className="text-right">Actions</TableHead>
                 </TableRow>
                 </TableHeader>
                 <TableBody>
                 {orders.map((order) => {
                     const {Icon, colorClasses, badgeVariant } = statusConfig[order.status];
+                    const isActionDisabled = order.status === 'Delivered' || order.status === 'Cancelled';
                     return (
                     <TableRow key={order.id}>
                         <TableCell className="font-medium text-primary whitespace-nowrap">{order.id}</TableCell>
@@ -75,6 +76,34 @@ export default function OrderViewList({ orders }: OrderViewListProps) {
                                 {order.status}
                             </Badge>
                         </TableCell>
+                        <TableCell className="text-right space-x-2 whitespace-nowrap">
+                            <Select
+                                value={order.status}
+                                onValueChange={(newStatus) => onUpdateStatus(order.id, newStatus as OrderStatus)}
+                                disabled={isActionDisabled}
+                            >
+                                <SelectTrigger className="h-8 w-[150px] text-xs inline-flex" disabled={isActionDisabled}>
+                                    <SelectValue placeholder="Change status" />
+                                </SelectTrigger>
+                                <SelectContent>
+                                {statusOptions.map(opt => (
+                                    <SelectItem key={opt} value={opt} className="text-xs">
+                                        {opt}
+                                    </SelectItem>
+                                ))}
+                                </SelectContent>
+                            </Select>
+                            <Button
+                                variant="destructive"
+                                size="sm"
+                                onClick={() => onCancelOrder(order.id)}
+                                disabled={isActionDisabled}
+                                className="h-8 text-xs"
+                            >
+                                <XCircle className="mr-1.5 h-3.5 w-3.5" />
+                                Cancel
+                            </Button>
+                        </TableCell>
                     </TableRow>
                     );
                 })}
@@ -82,7 +111,7 @@ export default function OrderViewList({ orders }: OrderViewListProps) {
             </Table>
         </CardContent>
         <CardFooter>
-            <p className="text-xs text-muted-foreground">Displaying last {orders.length} orders.</p>
+            <p className="text-xs text-muted-foreground">Displaying {orders.length} orders. Order modifications are for demonstration and not persisted.</p>
         </CardFooter>
     </Card>
   );

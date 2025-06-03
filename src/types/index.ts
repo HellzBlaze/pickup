@@ -53,3 +53,14 @@ export interface DeliveryInfo {
   postalCode: string;
   deliveryInstructions?: string;
 }
+
+export type OrderStatus = 'Preparing' | 'Out for Delivery' | 'Delivered' | 'Cancelled';
+
+export interface Order {
+  id: string;
+  customerName: string;
+  total: number;
+  items: number;
+  status: OrderStatus;
+  date: string; // ISO date string
+}

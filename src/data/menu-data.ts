@@ -98,8 +98,8 @@ export const menuData: CategoryType[] = [
         id: 'penguin_pepperoni',
         name: 'Penguin Pepperoni Blast',
         description: 'Classic pepperoni pizza with a zesty tomato sauce and mozzarella cheese, baked to perfection.',
-        price: 975.00, // Approx 12.99 USD
-        imageUrl: '/pic1.png', // Changed from placeholder
+        price: 975.00,
+        imageUrl: '/pic1.png',
         dataAiHint: 'pepperoni pizza',
         category: 'Pizzas from the Permafrost',
         customizations: pizzaCustomizations,
@@ -108,8 +108,8 @@ export const menuData: CategoryType[] = [
         id: 'glacial_veggie',
         name: 'Glacial Veggie Delight',
         description: 'A delightful mix of fresh bell peppers, onions, olives, mushrooms, and spinach on a creamy garlic base.',
-        price: 900.00, // Approx 11.99 USD
-        imageUrl: 'https://placehold.co/600x400.png',
+        price: 900.00,
+        imageUrl: '/pic2.png', // Changed from placeholder
         dataAiHint: 'vegetarian pizza',
         category: 'Pizzas from the Permafrost',
         customizations: pizzaCustomizations,
@@ -124,7 +124,7 @@ export const menuData: CategoryType[] = [
         id: 'antarctic_classic',
         name: 'The Antarctic Classic Burger',
         description: 'Juicy beef patty with lettuce, tomato, onion, pickles, and our signature polar sauce on a toasted brioche bun.',
-        price: 715.00, // Approx 9.50 USD
+        price: 715.00,
         imageUrl: 'https://placehold.co/600x400.png',
         dataAiHint: 'classic burger',
         category: 'Blizzard Burgers',
@@ -134,7 +134,7 @@ export const menuData: CategoryType[] = [
         id: 'iceberg_chicken',
         name: 'Iceberg Crispy Chicken Sandwich',
         description: 'Crispy fried chicken breast, spicy mayo, lettuce, and pickles on a soft potato roll.',
-        price: 770.00, // Approx 10.25 USD
+        price: 770.00,
         imageUrl: 'https://placehold.co/600x400.png',
         dataAiHint: 'chicken sandwich',
         category: 'Blizzard Burgers',
@@ -149,7 +149,7 @@ export const menuData: CategoryType[] = [
         id: 'arctic_garden',
         name: 'Arctic Garden Salad',
         description: 'A refreshing mix of mixed greens, cherry tomatoes, cucumbers, carrots, and croutons.',
-        price: 600.00, // Approx 7.99 USD
+        price: 600.00,
         imageUrl: 'https://placehold.co/600x400.png',
         dataAiHint: 'garden salad',
         category: 'Subzero Salads',
@@ -165,7 +165,7 @@ export const menuData: CategoryType[] = [
         id: 'polar_punch',
         name: 'Polar Punch',
         description: 'A fruity and refreshing punch, perfect for a warm day (or a cold one!).',
-        price: 260.00, // Approx 3.50 USD
+        price: 260.00,
         imageUrl: 'https://placehold.co/300x300.png',
         dataAiHint: 'fruit punch',
         category: 'Frosty Beverages',
@@ -174,7 +174,7 @@ export const menuData: CategoryType[] = [
         id: 'glacial_water',
         name: 'Glacial Spring Water',
         description: 'Pure, crisp Antarctic spring water.',
-        price: 150.00, // Approx 2.00 USD
+        price: 150.00,
         imageUrl: 'https://placehold.co/300x300.png',
         dataAiHint: 'water bottle',
         category: 'Frosty Beverages',

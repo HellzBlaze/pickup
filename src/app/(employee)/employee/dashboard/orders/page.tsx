@@ -3,7 +3,7 @@
 
 import { useState } from 'react';
 import OrderViewList from '@/components/features/employee/order-view-list';
-import type { Order, OrderStatus } from '@/types';
+import type { Order, OrderStatus, PaymentStatus } from '@/types';
 import { Button } from '@/components/ui/button';
 import { Trash2 } from 'lucide-react';
 import {
@@ -19,12 +19,13 @@ import {
 } from "@/components/ui/alert-dialog"
 
 const initialMockOrders: Order[] = [
-  { id: 'ORD001', customerName: 'Alice Wonderland', total: 1235.00, items: 2, status: 'Waiting', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
-  { id: 'ORD002', customerName: 'Bob The Builder', total: 850.50, items: 1, status: 'Preparing', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
-  { id: 'ORD003', customerName: 'Charlie Brown', total: 2100.75, items: 3, status: 'Prepared', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
-  { id: 'ORD004', customerName: 'Diana Prince', total: 550.00, items: 1, status: 'Served', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
-  { id: 'ORD005', customerName: 'Edward Scissorhands', total: 1675.20, items: 4, status: 'Cancelled', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
-  { id: 'ORD006', customerName: 'Fiona Gallagher', total: 780.00, items: 1, status: 'Waiting', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
+  { id: 'ORD001', customerName: 'Alice Wonderland', total: 1235.00, items: 2, status: 'Waiting', paymentStatus: 'Paid', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
+  { id: 'ORD002', customerName: 'Bob The Builder', total: 850.50, items: 1, status: 'Preparing', paymentStatus: 'Pending', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
+  { id: 'ORD003', customerName: 'Charlie Brown', total: 2100.75, items: 3, status: 'Prepared', paymentStatus: 'Paid', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
+  { id: 'ORD004', customerName: 'Diana Prince', total: 550.00, items: 1, status: 'Served', paymentStatus: 'Paid', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
+  { id: 'ORD005', customerName: 'Edward Scissorhands', total: 1675.20, items: 4, status: 'Cancelled', paymentStatus: 'Refunded', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
+  { id: 'ORD006', customerName: 'Fiona Gallagher', total: 780.00, items: 1, status: 'Waiting', paymentStatus: 'Pending', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
+  { id: 'ORD007', customerName: 'Harry Potter', total: 1990.00, items: 2, status: 'Preparing', paymentStatus: 'Failed', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
 ];
 
 
@@ -39,10 +40,18 @@ export default function EmployeeOrdersPage() {
     );
   };
 
+  const handleUpdatePaymentStatus = (orderId: string, newPaymentStatus: PaymentStatus) => {
+    setOrders(prevOrders =>
+      prevOrders.map(order =>
+        order.id === orderId ? { ...order, paymentStatus: newPaymentStatus } : order
+      )
+    );
+  };
+
   const handleCancelOrder = (orderId: string) => {
     setOrders(prevOrders =>
       prevOrders.map(order =>
-        order.id === orderId ? { ...order, status: 'Cancelled' } : order
+        order.id === orderId ? { ...order, status: 'Cancelled', paymentStatus: order.paymentStatus === 'Paid' ? 'Refunded' : order.paymentStatus } : order
       )
     );
   };
@@ -57,7 +66,7 @@ export default function EmployeeOrdersPage() {
         <div>
             <h1 className="text-3xl font-headline text-primary">Order Overview</h1>
             <p className="text-muted-foreground">
-                Monitor incoming and past orders. You can update order statuses or cancel them.
+                Monitor incoming and past orders. You can update order statuses, payment statuses, or cancel them.
             </p>
         </div>
         {orders.length > 0 && (
@@ -86,8 +95,10 @@ export default function EmployeeOrdersPage() {
       <OrderViewList 
         orders={orders} 
         onUpdateStatus={handleUpdateStatus}
+        onUpdatePaymentStatus={handleUpdatePaymentStatus}
         onCancelOrder={handleCancelOrder}
       />
     </div>
   );
 }
+

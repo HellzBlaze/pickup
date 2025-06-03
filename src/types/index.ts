@@ -55,6 +55,7 @@ export interface DeliveryInfo {
 }
 
 export type OrderStatus = 'Waiting' | 'Preparing' | 'Prepared' | 'Served' | 'Cancelled';
+export type PaymentStatus = 'Pending' | 'Paid' | 'Refunded' | 'Failed';
 
 export interface Order {
   id: string;
@@ -62,5 +63,7 @@ export interface Order {
   total: number;
   items: number;
   status: OrderStatus;
+  paymentStatus: PaymentStatus;
   date: string; // ISO date string
 }
+

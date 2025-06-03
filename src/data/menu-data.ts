@@ -99,7 +99,7 @@ export const menuData: CategoryType[] = [
         name: 'Penguin Pepperoni Blast',
         description: 'Classic pepperoni pizza with a zesty tomato sauce and mozzarella cheese, baked to perfection.',
         price: 975.00, // Approx 12.99 USD
-        imageUrl: 'https://placehold.co/600x400.png',
+        imageUrl: '/pic1.png', // Changed from placeholder
         dataAiHint: 'pepperoni pizza',
         category: 'Pizzas from the Permafrost',
         customizations: pizzaCustomizations,

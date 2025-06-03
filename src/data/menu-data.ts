@@ -166,7 +166,7 @@ export const menuData: CategoryType[] = [
         name: 'Polar Punch',
         description: 'A fruity and refreshing punch, perfect for a warm day (or a cold one!).',
         price: 260.00,
-        imageUrl: 'https://placehold.co/300x300.png',
+        imageUrl: '/pic6.png',
         dataAiHint: 'fruit punch',
         category: 'Frosty Beverages',
       },
@@ -182,3 +182,4 @@ export const menuData: CategoryType[] = [
     ],
   },
 ];
+

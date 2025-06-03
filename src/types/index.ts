@@ -54,7 +54,7 @@ export interface DeliveryInfo {
   deliveryInstructions?: string;
 }
 
-export type OrderStatus = 'Preparing' | 'Out for Delivery' | 'Delivered' | 'Cancelled';
+export type OrderStatus = 'Waiting' | 'Preparing' | 'Prepared' | 'Served' | 'Cancelled';
 
 export interface Order {
   id: string;

@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { format, parseISO } from 'date-fns';
-import { PackageCheck, PackageSearch, Truck, CheckCircle2, XCircle, type LucideIcon, Ban } from 'lucide-react';
+import { PackageCheck, PackageSearch, CheckCircle2, XCircle, type LucideIcon, Ban, Hourglass, BellRing } from 'lucide-react';
 
 interface OrderViewListProps {
   orders: Order[];
@@ -16,12 +16,13 @@ interface OrderViewListProps {
   onCancelOrder: (orderId: string) => void;
 }
 
-const statusOptions: OrderStatus[] = ['Preparing', 'Out for Delivery', 'Delivered'];
+const statusOptions: OrderStatus[] = ['Waiting', 'Preparing', 'Prepared', 'Served'];
 
 const statusConfig: Record<OrderStatus, { Icon: LucideIcon, colorClasses: string, badgeVariant: "default" | "secondary" | "destructive" | "outline" }> = {
+    'Waiting': { Icon: Hourglass, colorClasses: 'text-orange-500 dark:text-orange-400', badgeVariant: 'outline' },
     'Preparing': { Icon: PackageSearch, colorClasses: 'text-yellow-500 dark:text-yellow-400', badgeVariant: 'outline' },
-    'Out for Delivery': { Icon: Truck, colorClasses: 'text-blue-500 dark:text-blue-400', badgeVariant: 'default'},
-    'Delivered': { Icon: PackageCheck, colorClasses: 'text-green-500 dark:text-green-400', badgeVariant: 'secondary' },
+    'Prepared': { Icon: BellRing, colorClasses: 'text-teal-500 dark:text-teal-400', badgeVariant: 'default'},
+    'Served': { Icon: PackageCheck, colorClasses: 'text-green-500 dark:text-green-400', badgeVariant: 'secondary' },
     'Cancelled': { Icon: Ban, colorClasses: 'text-red-600 dark:text-red-500', badgeVariant: 'destructive'}
 };
 
@@ -62,7 +63,7 @@ export default function OrderViewList({ orders, onUpdateStatus, onCancelOrder }:
                 <TableBody>
                 {orders.map((order) => {
                     const {Icon, colorClasses, badgeVariant } = statusConfig[order.status];
-                    const isActionDisabled = order.status === 'Delivered' || order.status === 'Cancelled';
+                    const isActionDisabled = order.status === 'Served' || order.status === 'Cancelled';
                     return (
                     <TableRow key={order.id}>
                         <TableCell className="font-medium text-primary whitespace-nowrap">{order.id}</TableCell>

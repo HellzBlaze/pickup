@@ -19,11 +19,12 @@ import {
 } from "@/components/ui/alert-dialog"
 
 const initialMockOrders: Order[] = [
-  { id: 'ORD001', customerName: 'Alice Wonderland', total: 1235.00, items: 2, status: 'Preparing', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
-  { id: 'ORD002', customerName: 'Bob The Builder', total: 850.50, items: 1, status: 'Out for Delivery', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
-  { id: 'ORD003', customerName: 'Charlie Brown', total: 2100.75, items: 3, status: 'Delivered', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
-  { id: 'ORD004', customerName: 'Diana Prince', total: 550.00, items: 1, status: 'Preparing', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
+  { id: 'ORD001', customerName: 'Alice Wonderland', total: 1235.00, items: 2, status: 'Waiting', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
+  { id: 'ORD002', customerName: 'Bob The Builder', total: 850.50, items: 1, status: 'Preparing', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
+  { id: 'ORD003', customerName: 'Charlie Brown', total: 2100.75, items: 3, status: 'Prepared', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
+  { id: 'ORD004', customerName: 'Diana Prince', total: 550.00, items: 1, status: 'Served', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
   { id: 'ORD005', customerName: 'Edward Scissorhands', total: 1675.20, items: 4, status: 'Cancelled', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
+  { id: 'ORD006', customerName: 'Fiona Gallagher', total: 780.00, items: 1, status: 'Waiting', date: new Date(Date.now() - Math.random()*10*86400000).toISOString() },
 ];
 
 

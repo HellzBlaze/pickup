@@ -109,7 +109,7 @@ export const menuData: CategoryType[] = [
         name: 'Glacial Veggie Delight',
         description: 'A delightful mix of fresh bell peppers, onions, olives, mushrooms, and spinach on a creamy garlic base.',
         price: 900.00,
-        imageUrl: '/pic2.png', // Changed from placeholder
+        imageUrl: '/pic2.png',
         dataAiHint: 'vegetarian pizza',
         category: 'Pizzas from the Permafrost',
         customizations: pizzaCustomizations,
@@ -125,7 +125,7 @@ export const menuData: CategoryType[] = [
         name: 'The Antarctic Classic Burger',
         description: 'Juicy beef patty with lettuce, tomato, onion, pickles, and our signature polar sauce on a toasted brioche bun.',
         price: 715.00,
-        imageUrl: 'https://placehold.co/600x400.png',
+        imageUrl: '/pic3.png',
         dataAiHint: 'classic burger',
         category: 'Blizzard Burgers',
         customizations: burgerCustomizations,

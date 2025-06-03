@@ -2,6 +2,16 @@
   "name": "nextn",
   "version": "0.1.0",
   "private": true,
+  "author": "Your Name or Organization <you@example.com>",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/username/repository-name.git"
+  },
+  "bugs": {
+    "url": "https://github.com/username/repository-name/issues"
+  },
+  "homepage": "https://github.com/username/repository-name#readme",
   "scripts": {
     "dev": "next dev --turbopack -p 9002",
     "genkit:dev": "genkit start -- tsx src/ai/dev.ts",

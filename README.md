@@ -97,7 +97,20 @@ Review the `.gitignore` file for a complete list.
 
 ## Contributing
 
-Contributions are welcome! Please follow the existing code style and ensure linting and type checks pass before submitting a pull request.
+Contributions are welcome! If you'd like to contribute, please consider the following:
+
+1.  **Fork the repository.**
+2.  **Create a new branch** for your feature or bug fix (`git checkout -b feature/your-feature-name` or `bugfix/issue-description`).
+3.  **Make your changes.** Ensure you follow the existing code style and conventions.
+4.  **Test your changes thoroughly.**
+5.  **Ensure linting and type checks pass** (`npm run lint` and `npm run typecheck`).
+6.  **Commit your changes** with a clear and descriptive commit message.
+7.  **Push your branch** to your forked repository.
+8.  **Open a pull request** to the original repository, detailing the changes you've made.
+
+## License
+
+This project is currently unlicensed as it is marked private in `package.json`. If you intend to make this project open source, please choose an appropriate license and add a `LICENSE` file to the root of the project. You can find help choosing a license at [choosealicense.com](https://choosealicense.com/).
 
 ---
 

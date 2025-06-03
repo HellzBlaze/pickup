@@ -175,7 +175,7 @@ export const menuData: CategoryType[] = [
         name: 'Glacial Spring Water',
         description: 'Pure, crisp Antarctic spring water.',
         price: 150.00,
-        imageUrl: 'https://placehold.co/300x300.png',
+        imageUrl: '/pic7.png',
         dataAiHint: 'water bottle',
         category: 'Frosty Beverages',
       },
